@@ -26,4 +26,10 @@ class usuariosController extends Controller
 
     	return Redirect('/registrarUsuarios');
     }
+
+    public function consultar(Request $request){
+        $users=usuarios::all();
+
+        return view('consultarUsuarios',compact('users'));
+    }
 }

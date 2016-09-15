@@ -12,7 +12,7 @@
 			<input type="text" class="form-control" name="nombre">
 		</div>
 		<div class="form-group">
-			<label for="edad">Nombre</label>
+			<label for="edad">Edad</label>
 			<input type="text" class="form-control" name="edad">
 		</div>
 		<div class="form-group">
