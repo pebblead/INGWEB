@@ -32,4 +32,14 @@ class usuariosController extends Controller
 
         return view('consultarUsuarios',compact('users'));
     }
+
+    public function eliminar($id){
+        usuarios::find($id)->delete();
+        return Redirect('/consultarUsuario');
+    }
+
+    public function actualizar($id){
+        $user=usuarios::find($id);
+        return view('actualizarUsuarios', compact('user'));
+    }
 }

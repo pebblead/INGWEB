@@ -22,3 +22,7 @@ Route::get('/registrarUsuarios','principalController@registrarUsuarios');
 Route::post('/guardarUsuario','usuariosController@guardar');
 
 Route::get('/consultarUsuario','usuariosController@consultar');
+
+Route::get('/eliminarUsuario/{id}', 'usuariosController@eliminar');
+
+Route::get('/actualizarUsuario/{id}', 'usuariosController@actualizar');
