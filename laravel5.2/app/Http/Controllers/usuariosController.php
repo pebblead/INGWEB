@@ -42,4 +42,27 @@ class usuariosController extends Controller
         $user=usuarios::find($id);
         return view('actualizarUsuarios', compact('user'));
     }
+
+    public function actualizarUsuario($id, Request $datos){
+        $usuario =  usuarios::find($id);
+        $usuario->nombre =  $datos->input('nombre');
+        $usuario->edad= $datos->input('edad');
+        $usuario->sexo= $datos->input('sexo');
+        $usuario->correo=   $datos->input('correo');
+        $usuario->save();
+
+        return Redirect('/consultarUsuario');
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
