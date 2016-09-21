@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\proyectos;
+use DB;
 class proyectosController extends Controller
 {
     //
@@ -26,9 +27,10 @@ class proyectosController extends Controller
     }
 
     public function consultar(){
-    	$proyectos=proyectos::all();
+    	$proyectos=DB::table('proyectos')->paginate(5);
 
     	return view('consultarProyectos',compact('proyectos'));
+
     }
 
     public function eliminar($id){

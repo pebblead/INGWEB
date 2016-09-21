@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\usuarios;
+use DB;
 class usuariosController extends Controller
 {
     //
@@ -28,8 +29,8 @@ class usuariosController extends Controller
     }
 
     public function consultar(Request $request){
-        $users=usuarios::all();
-
+       /* $users=usuarios::all()-paginate(5);*/
+       $users=DB::table('usuarios')->paginate(5);
         return view('consultarUsuarios',compact('users'));
     }
 

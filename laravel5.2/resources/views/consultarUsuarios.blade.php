@@ -37,4 +37,5 @@
 			
 		</tbody>
 	</table>
+	{!! $users->render() !!}
 @stop
