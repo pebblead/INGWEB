@@ -28,3 +28,17 @@ Route::get('/eliminarUsuario/{id}', 'usuariosController@eliminar');
 Route::get('/actualizarUsuario/{id}', 'usuariosController@actualizar');
 
 Route::post('/actualizar/{id}', 'usuariosController@actualizarUsuario');
+
+/*PROYECTOS*/
+
+Route::get('/registrarProyectos','principalController@registrarProyectos');
+
+Route::post('/guardarProyecto','proyectosController@guardar');
+
+Route::get('/consultarProyecto','proyectosController@consultar');
+
+Route::get('/eliminarProyecto/{id}', 'proyectosController@eliminar');
+
+Route::get('/actualizarProyecto/{id}', 'proyectosController@actualizar');
+
+Route::post('/update/{id}', 'proyectosController@actualizarProyecto');

@@ -18,4 +18,7 @@ class principalController extends Controller
    public function registrarUsuarios(){
    	return view('registrarUsuarios');
    }
+   public function registrarProyectos(){
+   	return view('registrarProyectos');
+   }
 }

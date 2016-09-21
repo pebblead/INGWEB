@@ -1,7 +1,7 @@
 @extends('principal')
 
 @section('encabezado')
-	<h2>Registrar Usuarios</h2>
+	<h2>Actualizar Usuarios</h2>
 @stop
 
 @section('contenido')
