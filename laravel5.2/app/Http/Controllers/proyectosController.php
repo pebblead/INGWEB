@@ -52,4 +52,12 @@ class proyectosController extends Controller
 
         return Redirect('/consultarProyecto');
     }
+
+    public function pdfProyectos(){
+        $proyectos=proyectos::all();
+        $vista=view('pdfProyectos', compact('proyectos'));
+        $dompdf=\App::make('dompdf.wrapper');
+        $dompdf->loadHTML($vista);
+        return $dompdf->stream();
+    }
 }

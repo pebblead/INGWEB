@@ -1,7 +1,7 @@
 @extends('principal')
 
 @section('encabezado')
-	<h2>Consultar Usuarios</h2>
+	<h2>Consultar Usuarios <a href="{{url('pdfUsuarios')}}"><span class="glyphicon glyphicon-file" aria-hidden="true"></span></a></h2>
 @stop
 
 @section('contenido')
@@ -18,24 +18,33 @@
 		</thead>
 		<tbody>
 			@foreach($users as $u)
-			<tr>
-				<td>{{$u->id}}</td>
-				<td>{{$u->nombre}}</td>
-				<td>{{$u->edad}}</td>
-				@if ($u->sexo == 0)
-					<td>Masculino</td>
-				@else
-					<td>Femenino</td>
-				@endif
-				<td>{{$u->correo}}</td>
-				<td>
-					<a href="{{url('/actualizarUsuario')}}/{{$u->id}}" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
-					<a href="{{url('/eliminarUsuario')}}/{{$u->id}}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-				</td>
-			</tr>
+				<tr>
+					<td>{{$u->id}}</td>
+					<td>{{$u->nombre}}</td>
+					<td>{{$u->edad}}</td>
+					<td>
+						@if($u->sexo==0)
+							Masculino
+						@else
+							Femenino
+						@endif
+					</td>
+					<td>{{$u->correo}}</td>
+					<td>
+						<a href="{{url('/actualizarUsuario')}}/{{$u->id}}" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-edit" aria-hidden="true">Editar</span></a>
+
+						<a href="{{url('/eliminarUsuario')}}/{{$u->id}}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" aria-hidden="true">Eliminar</span></a>
+					</td>
+				</tr>
 			@endforeach
-			
 		</tbody>
 	</table>
 	{!! $users->render() !!}
 @stop
+
+
+
+
+
+
+

@@ -54,6 +54,14 @@ class usuariosController extends Controller
 
         return Redirect('/consultarUsuario');
     }
+
+    public function pdfUsuarios(){
+        $usuarios=usuarios::all();
+        $vista=view('pdfusuarios', compact('usuarios'));
+        $dompdf=\App::make('dompdf.wrapper');
+        $dompdf->loadHTML($vista);
+        return $dompdf->stream();
+    }
 }
 
 

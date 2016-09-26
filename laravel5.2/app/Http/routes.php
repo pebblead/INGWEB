@@ -42,3 +42,7 @@ Route::get('/eliminarProyecto/{id}', 'proyectosController@eliminar');
 Route::get('/actualizarProyecto/{id}', 'proyectosController@actualizar');
 
 Route::post('/update/{id}', 'proyectosController@actualizarProyecto');
+
+Route::get('/pdfUsuarios', 'usuariosController@pdfUsuarios');
+
+Route::get('/pdfProyectos', 'proyectosController@pdfProyectos');
